@@ -28,22 +28,22 @@ public class Tablero extends Application{
         //Layout
         Pane panel = new Pane();
         Canvas canvas = 
-                new Canvas(300,300);
+                new Canvas(1024,512);
         panel.getChildren().add(canvas);
         Scene scene =
-                new Scene (panel, 300, 300);
+                new Scene (panel, 1024,512);
         GraphicsContext gc =
                 canvas.getGraphicsContext2D();
         //DIBUJO DE UN RECTANGULO
-        //gc.setFill(Color.BLUE);
-        //gc.fillRect(10,10,20,20);
-        //gc.fillOval(30,30,100,100);
-        //gc.strokeLine(15,15,40,40);
+        gc.setFill(Color.BLUE);
+        gc.fillRect(10,10,20,20);
+        gc.fillOval(30,30,100,100);
+        gc.strokeLine(15,15,40,40);
         
         //UN POLÍGONO
-        //double xpoints[] = {10,30,20,10};
-        //double ypoints[] = {30,30,15,30};
-        //gc.strokePolygon(xpoints,ypoints,xpoints.length);
+        double xpoints[] = {10,30,20,10};
+        double ypoints[] = {30,30,15,30};
+        gc.strokePolygon(xpoints,ypoints,xpoints.length);
         
         LoopJuego loop = new LoopJuego(gc);
         loop.start();
